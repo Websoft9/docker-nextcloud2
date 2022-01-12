@@ -1,6 +1,9 @@
-## About
+# NextCloud
 
-This repository is forked from ONLYOFFICE/Docker-CommunityServer, we have the following modifications are provided
+## 安装
 
-* replace README.md
-* add README-zh.md, CHANGELOG.md, Note.md, License.md, docker-compose.yml,.env, src, .github folder
+NextCloud 容器安装注意事项：
+1. NextCloud 与 MySQL 版本匹配问题
+2. 受信域名问题([issues #3](https://github.com/Websoft9/docker-nextcloud/issues/3))
+
+
