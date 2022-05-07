@@ -63,7 +63,7 @@ volumes:
     driver: local
   nextcloud-data:
     driver: local
-redis:
+  redis:
     driver: local
   mysql:
     driver: local
