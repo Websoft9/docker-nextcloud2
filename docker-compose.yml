@@ -17,9 +17,6 @@ services:
       - MYSQL_USER=${DB_MYSQL_USER}
       - MYSQL_HOST=mysql
       - REDIS_HOST=redis
-      - NEXTCLOUD_TRUSTED_DOMAINS=${APP_URL}
-      - NEXTCLOUD_ADMIN_USER=${APP_USER}
-      - NEXTCLOUD_ADMIN_PASSWORD=${APP_PASSWORD}
     depends_on: 
       - mysql
       - redis
