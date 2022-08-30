@@ -16,10 +16,6 @@ services:
       - MYSQL_DATABASE=${DB_MYSQL_NAME}
       - MYSQL_USER=${DB_MYSQL_USER}
       - MYSQL_HOST=mysql
-      - REDIS_HOST=redis
-      - NEXTCLOUD_TRUSTED_DOMAINS=${APP_URL}
-      - NEXTCLOUD_ADMIN_USER=${APP_USER}
-      - NEXTCLOUD_ADMIN_PASSWORD=${APP_PASSWORD}
     links:
       - mysql
     restart: always
@@ -39,23 +35,9 @@ services:
       MYSQL_PASSWORD: ${DB_MYSQL_PASSWORD}
       MYSQL_ROOT_PASSWORD: ${DB_MYSQL_PASSWORD}
 
-  redis:
-    image: redis:${DB_REDIS_VERSION}
-    container_name: ${APP_NAME}-redis
-    restart: always
-    command: ["--databases", "1"]
-    healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
-    volumes:
-      - redis:/data
-
 volumes:
   nextcloud:
   nextcloud-data:
-  redis:
   mysql:
 
 networks:
