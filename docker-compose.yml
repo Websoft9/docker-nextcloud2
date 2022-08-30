@@ -17,9 +17,11 @@ services:
       - MYSQL_USER=${DB_MYSQL_USER}
       - MYSQL_HOST=mysql
       - REDIS_HOST=redis
-    depends_on: 
+      - NEXTCLOUD_TRUSTED_DOMAINS=${APP_URL}
+      - NEXTCLOUD_ADMIN_USER=${APP_USER}
+      - NEXTCLOUD_ADMIN_PASSWORD=${APP_PASSWORD}
+    links:
       - mysql
-      - redis
     restart: always
 
   mysql:
